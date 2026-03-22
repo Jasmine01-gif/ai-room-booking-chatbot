@@ -1,4 +1,4 @@
 Flask
 scikit-learn
-spacy
+spacy==3.7.2
 gunicorn
