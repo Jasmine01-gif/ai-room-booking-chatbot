@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Room Booking Calendar</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+</head>
+
+<body class="calendar-page">
+
+<h2>Room Booking Calendar</h2>
+
+<div class="top-bar">
+
+<a href="/admin">
+<button>Back to Admin</button>
+</a>
+
+<a href="/">
+<button>Chatbot</button>
+</a>
+
+</div>
+
+<div id="calendar"></div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+var calendarEl = document.getElementById("calendar");
+
+var bookingEvents = JSON.parse('{{ events | tojson | safe }}');
+
+var calendar = new FullCalendar.Calendar(calendarEl, {
+
+initialView: "dayGridMonth",
+events: bookingEvents
+
+});
+
+calendar.render();
+
+});
+
+</script>
+
+</body>
+
+</html>

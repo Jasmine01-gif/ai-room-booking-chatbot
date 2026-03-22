@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="admin-page">
+
+<h1>Room Booking Dashboard</h1>
+
+<div class="top-bar">
+
+<a href="/calendar">
+<button>View Calendar</button>
+</a>
+
+<a href="/">
+<button>Back to Chatbot</button>
+</a>
+
+</div>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Room</th>
+<th>Date</th>
+<th>Time</th>
+<th>Action</th>
+</tr>
+
+{% for booking in bookings %}
+
+<tr>
+<td>{{ booking[0] }}</td>
+<td>{{ booking[1] }}</td>
+<td>{{ booking[2] }}</td>
+<td>{{ booking[3] }}</td>
+
+<td>
+<a href="/delete/{{ booking[0] }}">
+<button class="delete-btn">Delete</button>
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
