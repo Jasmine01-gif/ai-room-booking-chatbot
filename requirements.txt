@@ -1,4 +1,5 @@
-Flask
-scikit-learn
+Flask==2.3.3
+scikit-learn==1.3.2
 spacy==3.7.2
-gunicorn
+gunicorn==21.2.0
+numpy==1.26.4
